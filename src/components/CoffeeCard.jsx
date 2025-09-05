@@ -64,8 +64,10 @@ const CoffeeCard = ({ coffee }) => {
                     </div>
                     <div className="card-actions justify-end w-full pr-6">
                         <div className="join join-vertical space-y-4">
-                            <Link className="btn join-item">view</Link>
-                            <Link className="btn join-item">Edit</Link>
+                            <Link to={`/coffeeDetails/${coffee._id}`} className="btn join-item">view</Link>
+                            <Link to={`/updateCoffee/${coffee._id}`}
+                             className="btn join-item">Edit</Link>
+
                             <button onClick={() => handleCoffeeDelete(_id)} className="btn join-item">X</button>
                         </div>
                     </div>
