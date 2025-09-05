@@ -7,6 +7,7 @@ import { RouterProvider } from "react-router/dom";
 import MainLayout from './Layouts/MainLayout.jsx';
 import Home from './components/Home.jsx';
 import AddCoffee from './components/AddCoffee.jsx';
+import UpdateCoffee from './components/UpdateCoffee.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,11 +15,16 @@ const router = createBrowserRouter([
     Component: MainLayout,
     children: [
       {
-        index: true, Component:Home
+        index: true, Component:Home,
+        loader: ()=> fetch('http://localhost:5000/coffees')
       },
       {
         path: '/addCoffee',
         Component: AddCoffee
+      },
+      {
+        path:'/updateCoffee',
+        Component:UpdateCoffee
       }
     ]
   },

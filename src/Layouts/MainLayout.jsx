@@ -1,15 +1,17 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import Home from '../components/Home';
+import Header from '../components/header';
+
 
 const MainLayout = () => {
     return (
-        <div>
-
-                
-             <div>
+        <div className=''>
+            <div>
+                <Header></Header>
+            </div>
+            <div className='max-w-7xl mx-auto'>
                 <Outlet></Outlet>
-             </div>
+            </div>
         </div>
     );
 };
